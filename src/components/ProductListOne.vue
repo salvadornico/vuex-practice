@@ -7,25 +7,16 @@
                 <span class="price">£{{ product.price }}</span>
             </li>
         </ul>
-		<button v-on:click="reducePrice">CUT PRICES!!</button>
+		<button v-on:click="reducePrice(2)">CUT PRICES!!</button>
     </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
-	computed: {
-		products() {
-			return this.$store.state.products;
-		},
-		saleProducts() {
-			return this.$store.getters.saleProducts;
-		}
-	},
-	methods: {
-		reducePrice: function() {
-			this.$store.commit("reducePrice");
-		}
-	}
+	computed: { ...mapGetters(["saleProducts"]) },
+	methods: { ...mapActions(["reducePrice"]) }
 };
 </script>
 
