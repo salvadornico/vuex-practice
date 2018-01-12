@@ -21,7 +21,7 @@ module.exports = {
 		indent: ["error", "tab"],
 		quotes: ["error", "double"],
 		"linebreak-style": ["warn", "unix"],
-		"no-undef": "off",
-		"vue/require-v-for-key": "off"
+		"no-undef": 0,
+		"vue/require-v-for-key": 0
 	}
 };
